@@ -24,7 +24,7 @@
 <title>Encaixe Componentes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Barlow:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
   --blue:       #1A4A9C;
@@ -67,7 +67,7 @@ body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(-
 .hero-inner {
   max-width: 820px;
   margin: 0 auto;
-  padding: 52px 24px 60px;
+  padding: 28px 24px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,12 +76,15 @@ body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(-
   z-index: 1;
 }
 
+/* Texto dos botões — visível apenas em desktop */
+.s-btn-label { display: inline; }
+
 /* Logo */
 .logo-img {
-  width: min(460px, 90vw);
+  width: min(200px, 55vw);
   height: auto;
   display: block;
-  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.35));
 }
 
 .hero-tagline {
@@ -96,11 +99,11 @@ body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(-
 
 /* ── Social buttons ── */
 .social-wrap {
-  margin-top: 36px;
+  margin-top: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 .social-eyebrow {
   font-size: 0.6rem;
@@ -118,26 +121,32 @@ body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(-
 .s-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
-  border-radius: 50px;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  font-family: 'Barlow', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-family: 'Space Grotesk', 'Barlow', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   white-space: nowrap;
-  transition: filter 0.2s, transform 0.18s;
-  border: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.18s;
+  border: 1px solid rgba(255,255,255,0.13);
   cursor: pointer;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.82);
+  backdrop-filter: blur(4px);
 }
-.s-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-.s-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+.s-btn:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+  color: #fff;
+}
+.s-btn svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.75; }
+.s-btn:hover svg { opacity: 1; }
 
-.s-ig   { background: linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: #fff; }
-.s-fb   { background: #1877F2; color: #fff; }
-.s-li   { background: #0A66C2; color: #fff; }
-.s-site { background: var(--yellow); color: var(--blue-deep); }
+.s-ig, .s-fb, .s-li, .s-site { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.82); }
 
 /* ══ TICKER ════════════════════════════════ */
 .ticker-wrap {
@@ -348,9 +357,10 @@ h2 em { font-style: normal; color: var(--blue-mid); }
 .loja-body { padding: 24px; }
 .loja-tag {
   display: inline-block; margin-bottom: 10px;
-  font-size: 0.58rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
   background: var(--yellow); color: var(--blue-deep);
   padding: 3px 10px; border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 .loja-name {
   font-family: 'Barlow Condensed', sans-serif;
@@ -359,16 +369,17 @@ h2 em { font-style: normal; color: var(--blue-mid); }
 }
 .loja-row { display: flex; gap: 10px; margin-bottom: 12px; }
 .loja-row svg { width: 15px; height: 15px; stroke: var(--yellow); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
-.loja-row span { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
-.loja-row span strong { display: block; color: rgba(255,255,255,0.92); font-size: 0.79rem; font-weight: 600; margin-bottom: 1px; }
+.loja-row span { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; font-family: 'Space Grotesk', sans-serif; }
+.loja-row span strong { display: block; color: rgba(255,255,255,0.92); font-size: 0.79rem; font-weight: 600; margin-bottom: 1px; font-family: 'Space Grotesk', sans-serif; }
 
 .loja-cta {
   display: inline-flex; align-items: center; gap: 7px;
   margin-top: 18px; padding: 10px 22px;
   background: var(--yellow); color: var(--blue-deep);
-  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   text-decoration: none; border-radius: 6px;
   transition: background 0.2s, transform 0.18s;
+  font-family: 'Space Grotesk', sans-serif;
 }
 .loja-cta:hover { background: var(--yellow-dk); transform: translateX(2px); }
 .loja-cta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -415,12 +426,27 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
 @media (max-width: 680px) {
   section { padding: 60px 20px; }
 
-  /* Hero */
-  .hero-inner { padding: 40px 20px 52px; }
-  .logo-img { width: min(340px, 92vw); }
+  /* Hero — compacto */
+  .hero-inner { padding: 24px 16px 28px; }
+  .logo-img { width: min(150px, 48vw); }
 
-  /* Social: pill on mobile too */
-  .s-btn { padding: 12px 18px; font-size: 0.8rem; }
+  /* Botões sociais: só ícone, linha única */
+  .s-btn-label { display: none; }
+  .social-wrap { margin-top: 18px; gap: 8px; }
+  .social-eyebrow { display: none; }
+  .social-row {
+    flex-wrap: nowrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .s-btn {
+    padding: 10px 12px;
+    gap: 0;
+    border-radius: 9px;
+    min-width: 44px;
+    justify-content: center;
+  }
+  .s-btn svg { width: 18px; height: 18px; opacity: 0.85; }
 
   /* QS */
   .qs-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -447,9 +473,9 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
 }
 
 @media (max-width: 420px) {
-  .social-row { gap: 8px; }
-  .s-btn { padding: 11px 14px; font-size: 0.77rem; gap: 6px; }
-  .s-btn svg { width: 15px; height: 15px; }
+  .social-row { gap: 6px; }
+  .s-btn { padding: 9px 10px; min-width: 40px; }
+  .s-btn svg { width: 17px; height: 17px; }
 }
 </style>
 </head>
@@ -474,8 +500,7 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
    onclick="trackClick('click_instagram','hero')">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-          Instagram
+          </svg><span class="s-btn-label"> Instagram</span>
         </a>
 
        <a href="https://www.facebook.com/encaixecomponentes1/"
@@ -485,8 +510,7 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
    onclick="trackClick('click_facebook','hero')">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-          Facebook
+          </svg><span class="s-btn-label"> Facebook</span>
         </a>
 
         <a href="https://www.linkedin.com/company/encaixe-componentes/"
@@ -496,8 +520,7 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
    onclick="trackClick('click_linkedin','hero')">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          LinkedIn
+          </svg><span class="s-btn-label"> LinkedIn</span>
         </a>
 
         <a href="https://encaixecomponentes.com.br/"
@@ -508,8 +531,7 @@ footer { background: #07101F; border-top: 1px solid rgba(245,197,24,0.15); paddi
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
             <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
-          </svg>
-          Nosso Site
+          </svg><span class="s-btn-label"> Nosso Site</span>
         </a>
 
       </div>
